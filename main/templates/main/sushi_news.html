@@ -1,0 +1,37 @@
+{% extends 'main/base_sushi.html' %}
+{% load static %}
+{% block title %}
+Sushi Light / Новини
+{% endblock %}
+
+{% block styles %}
+.content_buttons{
+display: none;
+}
+
+{% endblock %}
+{% block leftlist %}
+<li class="t1"><a href="{% url 'shef' %}">Роли від шефа NEW</a></li>
+<li class="t1"><a href="{% url 'maki' %}">Макі роли</a></li>
+<li class="t1"><a href="{% url 'kalif_kunj' %}">Роли каліфорнія в кунжуті</a></li>
+<li class="t1"><a href="{% url 'kalif_tobiko' %}">Роли каліфорнія в тобіко</a></li>
+<li class="t1"><a href="{% url 'cheese' %}">Роли з сиром філадельфія</a></li>
+<li class="t1"><a href="{% url 'dragon_roll' %}">Рол дракон</a></li>
+<li class="t1"><a href="{% url 'sets' %}">СЕТИ</a></li>
+<li class="t1"><a href="{% url 'nigiri' %}">Суши нігірі</a></li>
+<li class="t1"><a href="{% url 'gunkan' %}">Гункан нігірі</a></li>
+<li class="t1"><a href="{% url 'sashimi' %}">Сашімі</a></li>
+{% endblock%}
+
+{% block news%}
+{% for el in news%}
+<br>
+<div class="news_block">
+    <div class="news_block_name">{{el.name}}</div>
+    <div class="news_block_spec">{{el.spec|linebreaks}}</div>
+    <div class="news_block_date">{{el.date}}</div>
+</div>
+
+
+{% endfor%}
+{% endblock %}

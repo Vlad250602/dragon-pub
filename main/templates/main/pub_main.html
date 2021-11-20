@@ -1,0 +1,51 @@
+{% extends 'main/base_pub.html' %}
+{% load static %}
+
+{% block styles %}
+.content_buttons{
+display: none;
+}
+{% endblock%}
+
+{% block title %}
+Pub / Головна
+{% endblock %}
+
+{% block leftlist %}
+<li class="t1"><a href="{% url 'lunch' %}">Сніданок-Ланч</a></li>
+<li class="t1"><a href="{% url 'salad' %}">Салати</a></li>
+<li class="t1"><a href="{% url 'soup' %}">Супи</a></li>
+<li class="t1"><a href="{% url 'fish' %}">Рибнi та м'яснi страви</a></li>
+<li class="t1"><a href="{% url 'grill' %}">Гриль страви</a></li>
+<li class="t1"><a href="{% url 'pizza' %}">Піца</a></li>
+<li class="t1"><a href="{% url 'dessert' %}">Десерти</a></li>
+<li class="t1"><a href="{% url 'garnir' %}">Гарніри</a></li>
+<li class="t1"><a href="{% url 'tea_coffee' %}">Чай та Кава</a></li>
+<li class="t1"><a href="{% url 'home' %}">Домашні чаї та зігріваючі напої</a></li>
+<li class="t1"><a href="{% url 'water' %}">Вода і газовані напої</a></li>
+<li class="t1"><a href="{% url 'alco' %}">Міцний алкоголь та пиво</a></li>
+<li class="t1"><a href="{% url 'coctails' %}">Алкогольні коктейлі</a></li>
+<li class="t1"><a href="{% url 'non_alco_coctails' %}">Безалкогольні коктейлі</a></li>
+{% endblock%}
+
+{% block content_top %}
+
+<div class="t4" style="margin-left: 20px">
+    Ласкаво просимо!
+</div>
+
+{% endblock%}
+
+{% block content2 %}
+<div class="mobile_news">
+    <div class="t4" style="font-size: 50px; margin-top: 0px">Актуальнi новини</div>
+    {% for el in news%}
+    <br>
+    <div class="news_block">
+        <div class="news_block_name">{{el.name}}</div>
+        <div class="news_block_spec">{{el.spec|linebreaks}}</div>
+        <div class="news_block_date">{{el.date}}</div>
+    </div>
+    {% endfor%}
+</div>
+{% endblock %}

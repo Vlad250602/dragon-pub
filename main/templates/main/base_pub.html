@@ -1,0 +1,157 @@
+{% load static %}
+<html>
+
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="shortcut icon" href="{% static 'img/pub_logo.png' %}" type="image/png">
+	<link href="{% static 'css/style2.css'%}" rel="stylesheet">
+	<link href="{% static 'css/adaptive2.css'%}" rel="stylesheet">
+	<link href = "{% static 'eastman/stylesheet.css'%}" rel = "stylesheet" type = "text/css" />
+	<style>
+		{% block styles %}
+		{% endblock %}
+	</style>
+	<script>
+
+		function onList(id1, id2){
+			var e = document.getElementById(id1), k = document.getElementById(id2);
+			e.style.display = 'none';
+			if(e.style.display == 'none')
+				k.style.display = 'block';
+		}
+
+		function onBlock(id1, id2){
+			var e = document.getElementById(id1), k = document.getElementById(id2);
+			e.style.display = 'block';
+			if(e.style.display == 'block')
+				k.style.display = 'none';
+		}
+		function onMenu(id1){
+			var e = document.getElementById(id1);
+			if(e.style.display == 'block')
+				e.style.display = 'none';
+			else
+				e.style.display = 'block';
+
+		}
+	</script>
+</head>
+
+<body class="body">
+<div class="mobile_top">
+			<div class="mobile_top_menu_button" onclick="onMenu('mobile_menu')">
+				<div></div>
+			</div>
+			<a href="{% url 'pub_main' %}">
+				<div class="mobile_top_logo">
+				</div>
+			</a>
+		</div>>
+		<div class="mobile_menu" id="mobile_menu" style="display: none">
+			<div class="mobile_menu_list_title"><center>МЕНЮ</center></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'lunch' %}">Сніданок-Ланч</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'salad' %}">Салати</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'soup' %}">Супи</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'fish' %}">Рибнi та м'яснi страви</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'grill' %}">Гриль страви</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'pizza' %}">Піца</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'dessert' %}">Десерти</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'garnir' %}">Гарніри</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'tea_coffee' %}">Чай та Кава</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'home' %}">Домашні чаї та зігріваючі напої</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'water' %}">Вода і газовані напої</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'alco' %}">Міцний алкоголь та пиво</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'coctails' %}">Алкогольні коктейлі</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_list"><a href="{% url 'non_alco_coctails' %}">Безалкогольні коктейлі</a></div>
+			<div class="mobile_menu_list_line"></div>
+			<div class="mobile_menu_switch"><a href="{% url 'sushi_main' %}">Sushi Light</a></div>
+			<div class="mobile_menu_list_line"></div>
+		</div>
+		<div class="left_head">
+			<a href="{% url 'sushi_main' %}">
+				<div class=head_logo></div>
+			</a>
+		</div>
+		<div class="center_head row">
+			<div class="num">
+				<div class="num_in">
+					<img src="{% static 'img/num.png' %}" width="100%" height="100%">
+				</div>
+			</div>
+
+		</div>
+		<div class="right_head"></div>
+		<div class="leftbar">
+			<div class="inleftbar">
+				<div class="menu_button">
+					<div class="menu_button_in">
+						<a href="{% url 'pub_main' %}"><img class="d" src="{% static 'img/menu_pub.png' %}" width="98%" height="90%"></a>
+					</div>
+				</div>
+				<div class="menu">
+					<ul>
+						{% block leftlist %}{% endblock %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="incontent">
+				<div class="scroll" >
+					{% block content_top %}
+					{% endblock %}
+
+					<div id="menu1" class="inscroll_menu">
+						{% block content %}
+						{% endblock%}
+					</div>
+
+					<div id="menu2" class="inscroll_list">
+						{% block content2 %}
+						{% endblock%}
+					</div>
+					{% block news %}
+					{% endblock %}
+				</div>
+			</div>
+			<div class="content_buttons">
+				<div class="but1" onclick="onBlock('menu1','menu2')"><div></div></div>
+				<div class="but2" onclick="onList('menu1','menu2')"><div></div></div>
+				<!--<button type="button" onclick="onBlock('menu1', 'menu2')">Block</button>
+				<button type="button" onclick="onList('menu1', 'menu2')">List</button>-->
+			</div>
+		</div>
+		<div class="rightbar">
+			<div class="inrightbar">
+				<div class="newsbutton">
+					<div class="newsbutton_in">
+						<a href="{% url 'pub_news' %}"><img class="d" src="{% static 'img/news_pub.png' %}" width="98%" height="90%"></a>
+					</div>
+				</div>
+				<div class="newsbar">
+					<ul>
+						{% for el in news %}
+						<a href="{% url 'pub_news' %}"><li class="t3">{{el.name}}<br background="red">{{el.date}}</li></a>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	<div class="footer"></div>
+</body>
+
+</html>
