@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     #sushi
-    path('', views.Sushi_main, name='sushi_main'),
+    path('sushi-main', views.Sushi_main, name='sushi_main'),
     path('rolls-shef', views.sushi_rolls_shef, name='shef'),
     path('sushi-news', views.Sushi_news, name='sushi_news'),
     path('maki_rolls', views.sushi_maki, name='maki'),
@@ -17,11 +17,12 @@ urlpatterns = [
     path('sashimi', views.sushi_sashimi, name='sashimi'),
     #Pub
     path('pub-news', views.Pub_news, name='pub_news'),
-    path('pub-main',views.Pub_main, name='pub_main'),
+    path('',views.Pub_main, name='pub_main'),
     path('lunch', views.pub_lunch, name='lunch'),
     path('salad', views.pub_salad, name='salad'),
     path('soup', views.pub_soup, name='soup'),
-    path('fish', views.pub_fish, name='fish'),
+    path('zak-beer', views.pub_zak_beer, name='zak_beer'),
+    path('zak-cold', views.pub_zak_cold, name='zak_cold'),
     path('grill-menu', views.pub_grill, name='grill'),
     path('pizza', views.pub_pizza, name='pizza'),
     path('dessert', views.pub_dessert, name='dessert'),

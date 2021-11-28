@@ -224,6 +224,34 @@ class Menu_pub_fish(models.Model):
         verbose_name = 'Рыбные блюда'
         verbose_name_plural = 'Рыбное блюдо'
 
+class Menu_pub_zak_beer(models.Model):
+    name = models.CharField('Название', max_length=40)
+    weight = models.CharField('Вес', max_length=10)
+    spec = models.CharField('Состав', max_length=200, blank=True)
+    price = models.CharField('Цена', max_length=10)
+    image = models.ImageField(upload_to="pub", default='pub/empty.png')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Закуска к пиву'
+        verbose_name_plural = 'Закуски к пиву'
+
+class Menu_pub_zak_cold(models.Model):
+    name = models.CharField('Название', max_length=40)
+    weight = models.CharField('Вес', max_length=10)
+    spec = models.CharField('Состав', max_length=200, blank=True)
+    price = models.CharField('Цена', max_length=10)
+    image = models.ImageField(upload_to="pub", default='pub/empty.png')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Закуска холодные'
+        verbose_name_plural = 'Закуски холодные'
+
 class Menu_pub_grill(models.Model):
     name = models.CharField('Название', max_length=40)
     weight = models.CharField('Вес', max_length=20)

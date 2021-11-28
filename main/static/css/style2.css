@@ -48,6 +48,15 @@ a{
 	background: url("storage/pub_logo.png");
 	background-size: 100%;
 }
+
+.mobile_toptext{
+	font-family: Eastman;
+	font-size: 50px;
+	margin-top: 25px;
+	margin-left: 10px;
+	float: left;
+	color: white;
+}
 .mobile_menu{
 	margin-top: -20px;
 	z-index: 5;
@@ -74,7 +83,7 @@ a{
 	font-family: Eastman;
 	font-size: 50px;
 	background: black;
-	margin-top: 125px;
+	margin-top: 25px;
 	color: white;
 	margin-left: 30px;
 	vertical-align: middle;
@@ -150,7 +159,6 @@ a{
 	margin-top: 1%;
 }
 .leftbar{
-	margin-top: 1%;
 	width: 19%;
 	height: 79%;
 	float: left;
@@ -188,7 +196,6 @@ a{
 	border: 1px solid #c50000;
 }
 .content{
-	margin-top: 1%;
 	width: 65%;
 	height: 79%;
 	float: left;
@@ -340,7 +347,6 @@ a{
 }
 
 .rightbar{
-	margin-top: 1%;
 	width: 15%;
 	height: 79%;
 	float: right;

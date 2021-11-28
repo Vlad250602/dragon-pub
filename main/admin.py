@@ -13,6 +13,7 @@ from .models import Menu_pub_tea, \
     Menu_pub_salad, Menu_pub_fish, \
     Menu_alco_vodka, Menu_alco_brendi, \
     Menu_alco_konjack, Menu_alco_vine_bokal,\
+    Menu_pub_zak_beer, Menu_pub_zak_cold, \
     Menu_alco_vine_igr, Menu_alco_vine_red, \
     Menu_alco_vine_white, Menu_alco_beer, \
     Menu_alco_whiskey, Menu_alco_liker, \
@@ -35,7 +36,8 @@ admin.site.register(Menu_gunkan)
 admin.site.register(Menu_sashimi)
 
 #pub models
-admin.site.register(Menu_pub_fish)
+admin.site.register(Menu_pub_zak_beer)
+admin.site.register(Menu_pub_zak_cold)
 admin.site.register(Menu_pub_coctail)
 admin.site.register(Menu_pub_salad)
 admin.site.register(Menu_pub_coctail_non)

@@ -42,6 +42,9 @@
 			<div class="mobile_top_menu_button" onclick="onMenu('mobile_menu')">
 				<div></div>
 			</div>
+            <div class="mobile_toptext">
+                Меню
+            </div>
 			<a href="{% url 'pub_main' %}">
 				<div class="mobile_top_logo">
 				</div>
@@ -55,8 +58,6 @@
 			<div class="mobile_menu_list"><a href="{% url 'salad' %}">Салати</a></div>
 			<div class="mobile_menu_list_line"></div>
 			<div class="mobile_menu_list"><a href="{% url 'soup' %}">Супи</a></div>
-			<div class="mobile_menu_list_line"></div>
-			<div class="mobile_menu_list"><a href="{% url 'fish' %}">Рибнi та м'яснi страви</a></div>
 			<div class="mobile_menu_list_line"></div>
 			<div class="mobile_menu_list"><a href="{% url 'grill' %}">Гриль страви</a></div>
 			<div class="mobile_menu_list_line"></div>
@@ -74,11 +75,15 @@
 			<div class="mobile_menu_list_line"></div>
 			<div class="mobile_menu_list"><a href="{% url 'alco' %}">Міцний алкоголь та пиво</a></div>
 			<div class="mobile_menu_list_line"></div>
+            <div class="mobile_menu_list"><a href="{% url 'zak_beer' %}">Закуски до пива</a></div>
+			<div class="mobile_menu_list_line"></div>
+            <div class="mobile_menu_list"><a href="{% url 'zak_cold' %}">Холоднi закуски</a></div>
+			<div class="mobile_menu_list_line"></div>
 			<div class="mobile_menu_list"><a href="{% url 'coctails' %}">Алкогольні коктейлі</a></div>
 			<div class="mobile_menu_list_line"></div>
 			<div class="mobile_menu_list"><a href="{% url 'non_alco_coctails' %}">Безалкогольні коктейлі</a></div>
 			<div class="mobile_menu_list_line"></div>
-			<div class="mobile_menu_switch"><a href="{% url 'sushi_main' %}">Sushi Light</a></div>
+			<div class="mobile_menu_switch"><a href="{% url 'sushi_main' %}">Перейти на Sushi Light</a></div>
 			<div class="mobile_menu_list_line"></div>
 		</div>
 		<div class="left_head">

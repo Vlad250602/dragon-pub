@@ -11,6 +11,7 @@ from .models import Menu_pub_tea, \
     Menu_pub_water, Menu_pub_coctail,\
     Menu_pub_coctail_non, Menu_pub_dessert, \
     Menu_pub_salad, Menu_pub_fish, \
+    Menu_pub_zak_beer, Menu_pub_zak_cold, \
     Menu_alco_vodka, Menu_alco_brendi, \
     Menu_alco_konjack, Menu_alco_vine_bokal, \
     Menu_alco_vine_igr, Menu_alco_vine_red, \
@@ -96,11 +97,6 @@ def pub_lunch(request):
     n1 = pub_news.objects.all()
     return render(request, 'main/pub_lunch.html', {'Menu': dish, 'news': n1})
 
-def pub_fish(request):
-    dish = Menu_pub_fish.objects.all()
-    n1 = pub_news.objects.all()
-    return render(request, 'main/pub_fish.html', {'Menu': dish, 'news': n1})
-
 def pub_salad(request):
     dish = Menu_pub_salad.objects.all()
     n1 = pub_news.objects.all()
@@ -155,6 +151,16 @@ def pub_non_alco_coctails(request):
     dish = Menu_pub_coctail_non.objects.all()
     n1 = pub_news.objects.all()
     return render(request, 'main/pub_Coctail_nonalco.html', {'Menu': dish, 'news': n1})
+
+def pub_zak_beer(request):
+    dish = Menu_pub_zak_beer.objects.all()
+    n1 = pub_news.objects.all()
+    return render(request, 'main/pub_zak_beer.html', {'Menu': dish, 'news': n1})
+
+def pub_zak_cold(request):
+    dish = Menu_pub_zak_cold.objects.all()
+    n1 = pub_news.objects.all()
+    return render(request, 'main/pub_zak_cold.html', {'Menu': dish, 'news': n1})
 
 #-------------------------Alcohol models--------------------------------
 def pub_alco(request):
